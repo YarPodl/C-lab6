@@ -11,5 +11,9 @@
 #include <tchar.h>
 
 
+#include <iostream>
+
+using std::cout;
+using std::cin;
 
 // TODO: Установите здесь ссылки на дополнительные заголовки, требующиеся для программы
