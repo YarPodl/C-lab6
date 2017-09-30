@@ -85,6 +85,7 @@ classList & classList::operator-(const classList & object){
 		if (!object.search(current->value)) {
 			newObject->add(current->value);
 		}
+		current = current->next;
 	}
 	return *newObject;
 }
@@ -96,6 +97,7 @@ classList & classList::operator*(const classList & object){
 		if (object.search(current->value) && search(current->value)) {
 			newObject->add(current->value);
 		}
+		current = current->next;
 	}
 	return *newObject;
 }
