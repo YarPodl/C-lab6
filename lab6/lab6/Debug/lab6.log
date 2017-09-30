@@ -1,0 +1,5 @@
+﻿  classList.cpp
+d:\pgu\c++\lab6\lab6\lab6\classlist.cpp(53): warning C4715: classList::operator=: значение возвращается не при всех путях выполнения
+d:\pgu\c++\lab6\lab6\lab6\classlist.cpp(51): warning C4172: возвращение адреса локальной или временной переменной
+  lab6.vcxproj -> D:\PGU\C++\lab6\lab6\Debug\lab6.exe
+  lab6.vcxproj -> D:\PGU\C++\lab6\lab6\Debug\lab6.pdb (Full PDB)

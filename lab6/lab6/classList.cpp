@@ -1,54 +1,80 @@
 #include "stdafx.h"
+#include "classList.h"
 
-class classList
-{
-private:
-	struct elemList {
-		int value;
-		elemList *next;
-	};
 
-public:
 
-	elemList *start;
 
-	int search(int key) {
-		elemList *current = start;
+int classList :: search(int key) {
+	elemList *current = start;
+	while (current) {
+		if (current->value == key) {
+			return 1;
+		}
+		current = current->next;
+	}
+	return 0;
+}
+
+
+classList::classList() {
+	start = NULL;
+}
+
+classList::classList(const classList & object){
+	if (object.start)	{
+		start = new elemList;
+		start->value = object.start->value;
+		elemList *current = object.start->next, *last = start;
 		while (current) {
-			if (current->value == key) {
-				return 1;
-			}
+			elemList *newElem = new elemList();
+			newElem->value = current->value;
+			last->next = newElem;
+			last = newElem;
 			current = current->next;
 		}
-		return 0;
+		last->next = NULL;
 	}
+}
 
-	classList() {
-		start = NULL;
+classList::~classList(){
+	elemList *current = start, *nextElem;
+	while (current) {
+		nextElem = current->next;
+		delete current;
+		current = nextElem;
 	}
+}
 
-	void add(int value) {
-		if (!search(value)) {
-			elemList newElem;
-			newElem.value = value;
-			newElem.next = start;
-			start = &newElem;
-		}
+classList & classList::operator=(const classList & object){
+	if (this != &object) {
+		if(this->)
+		delete[] this;
+		return classList(object);
 	}
-	void print() {
-		elemList *current = start;
-		while (current) {
-			cout << current->value << ' ' << '\n';
-			current = current->next;
-		}
+}
+
+void classList ::  add(int value) {
+	if (!search(value)) {
+		elemList *newElem = new elemList();
+		newElem->value = value;
+		newElem->next = start;
+		start = newElem;
 	}
-	int getCount() {
-		elemList *current = start;
-		int i = 0;
-		while (current) {
-			current = current->next;
-			i++;
-		}
-		return i;
+}
+void classList ::  print() {
+	elemList *current = start;
+	while (current) {
+		cout << current->value << ' ';
+		current = current->next;
 	}
-};
+	cout << '\n';
+}
+int classList ::  getCount() {
+	elemList *current = start;
+	int i = 0;
+	while (current) {
+		current = current->next;
+		i++;
+	}
+	return i;
+}
