@@ -10,20 +10,36 @@ const int count = 3;
 
 int main()
 {
-	classList list;
+	/*classList list;
 	int temp;
 	for (int i = 0; i < count; i++) {
 		cin >> temp;
 		list.add(temp);
 		cout << list.getCount() << '\n';
-	}
-	classList l2;
-	l2 = list;
+	}*/
+
+	classList l1, l2, l3;
+	l1.add(1);
+	l1.add(2);
+	l1.add(3);
+
+	l2.add(2);
+	l2.add(5);
+	l2.add(8);
+
 	
-	cin >> temp;
-	l2.add(temp);
-	list.print();
-	l2.print();
+
+	cout << l1;
+	cout << l2;
+
+	l3 = l1 + l2;
+	cout << l3;
+
+	l3 = l1 - l2;
+	cout << l3;
+
+	l3 = l1 * l2;
+	cout << l3;
     return 0;
 }
 
