@@ -18,7 +18,7 @@ int main()
 		cout << list.getCount() << '\n';
 	}*/
 
-	classList l1, l2, l3;
+	classList l1, l2, l3, l4;
 	l1.add(1);
 	l1.add(2);
 	l1.add(3);
@@ -40,6 +40,10 @@ int main()
 
 	l3 = l1 * l2;
 	cout << l3;
+
+	classList l5 = l3;
+	cout << l5;
+
     return 0;
 }
 

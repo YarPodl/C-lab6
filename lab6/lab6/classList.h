@@ -33,8 +33,6 @@ public:
 	friend ostream& operator<<(ostream& a, const classList& b);
 	
 
-
-
 	void add(int value);
 	void print();
 	int getCount() const;
