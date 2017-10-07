@@ -62,10 +62,12 @@ classList & classList::operator=(const classList & object){
 		last->next = NULL;
 		return *this;
 	}*/
-
+	
 	classList *newObject = new classList(object);
+	this->~classList();
 	this->start = newObject->start;
 	return *this;
+
 }
 
 classList & classList::operator+(const classList & object){
@@ -90,7 +92,7 @@ classList & classList::operator-(const classList & object){
 	return *newObject;
 }
 
-classList & classList::operator*(const classList & object){
+classList & classList::operator/(const classList & object){
 	classList *newObject = new classList();
 	elemList *current = start;
 	while (current) {
@@ -112,6 +114,13 @@ ostream & operator<<(ostream & a, const classList & b){
 	return a;
 }
 
+istream & operator >> (istream & a, classList & b){
+	int temp;
+	a >> temp;
+	b.add(temp);
+	return a;
+}
+
 void classList ::  add(int value) {
 	if (!search(value)) {
 		elemList *newElem = new elemList();
@@ -119,14 +128,6 @@ void classList ::  add(int value) {
 		newElem->next = start;
 		start = newElem;
 	}
-}
-void classList ::  print() {
-	elemList *current = start;
-	while (current) {
-		cout << current->value << ' ';
-		current = current->next;
-	}
-	cout << '\n';
 }
 int classList ::  getCount() const {
 	elemList *current = start;

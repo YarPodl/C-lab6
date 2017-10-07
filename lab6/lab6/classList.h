@@ -29,12 +29,11 @@ public:
 	classList& operator= (const classList &object);
 	classList& operator+ (const classList &object);
 	classList& operator- (const classList &object);
-	classList& operator* (const classList &object);
+	classList& operator/ (const classList &object);
 	friend ostream& operator<<(ostream& a, const classList& b);
-	
+	friend istream& operator>>(istream& a, classList& b);
 
 	void add(int value);
-	void print();
 	int getCount() const;
 };
 

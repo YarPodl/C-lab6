@@ -38,9 +38,10 @@ int main()
 	l3 = l1 - l2;
 	cout << l3;
 
-	l3 = l1 * l2;
+	l3 = l2 = l1 / l2;
 	cout << l3;
 
+	cin >> l3;
 	classList l5 = l3;
 	cout << l5;
 
