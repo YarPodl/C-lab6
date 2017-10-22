@@ -46,22 +46,7 @@ classList::~classList(){
 }
 
 classList & classList::operator=(const classList & object){
-	/*if (this != &object) { // самоприсвоение
-		this->~classList();
-
-		start = new elemList;
-		start->value = object.start->value;
-		elemList *current = object.start->next, *last = start;
-		while (current) {
-			elemList *newElem = new elemList();
-			newElem->value = current->value;
-			last->next = newElem;
-			last = newElem;
-			current = current->next;
-		}
-		last->next = NULL;
-		return *this;
-	}*/
+	
 	
 	classList *newObject = new classList(object);
 	this->~classList();
